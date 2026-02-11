@@ -20,8 +20,8 @@ EOT
     dns_zone_id              = optional(string)
     tls = object({
       cdn_frontdoor_secret_id = optional(string)
-      certificate_type        = optional(string, "ManagedCertificate")
-      minimum_tls_version     = optional(string, "TLS12")
+      certificate_type        = optional(string) # Default: "ManagedCertificate"
+      minimum_tls_version     = optional(string) # Default: "TLS12"
     })
   }))
 }
