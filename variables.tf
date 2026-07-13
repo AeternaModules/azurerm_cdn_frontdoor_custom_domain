@@ -26,7 +26,7 @@ EOT
     dns_zone_id              = optional(string)
     tls = object({
       cdn_frontdoor_secret_id = optional(string)
-      certificate_type        = optional(string) # Default: "ManagedCertificate"
+      certificate_type        = optional(string)
       cipher_suite = optional(object({
         custom_ciphers = optional(object({
           tls12 = optional(set(string))
