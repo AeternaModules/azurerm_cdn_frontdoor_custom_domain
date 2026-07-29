@@ -13,7 +13,6 @@ Required:
                 - tls12 (optional)
                 - tls13 (optional)
             - type (required)
-        - minimum_tls_version (optional)
         - minimum_version (optional)
 Optional:
     - dns_zone_id
@@ -34,8 +33,7 @@ EOT
         }))
         type = string
       }))
-      minimum_tls_version = optional(string)
-      minimum_version     = optional(string)
+      minimum_version = optional(string)
     })
   }))
   # Note: 13 additional provider-side validators are enforced at apply time but not mirrored as validation{} blocks here (bespoke or non-mechanically-translatable).

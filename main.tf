@@ -22,8 +22,7 @@ resource "azurerm_cdn_frontdoor_custom_domain" "cdn_frontdoor_custom_domains" {
         type = cipher_suite.value.type
       }
     }
-    minimum_tls_version = each.value.tls.minimum_tls_version
-    minimum_version     = each.value.tls.minimum_version
+    minimum_version = each.value.tls.minimum_version
   }
 }
 
