@@ -24,7 +24,7 @@ output "cdn_frontdoor_custom_domains_name" {
 }
 output "cdn_frontdoor_custom_domains_tls" {
   description = "Map of tls values across all cdn_frontdoor_custom_domains, keyed the same as var.cdn_frontdoor_custom_domains"
-  value       = { for k, v in azurerm_cdn_frontdoor_custom_domain.cdn_frontdoor_custom_domains : k => v.tls if v.tls != null && length(v.tls) > 0 }
+  value       = { for k, v in azurerm_cdn_frontdoor_custom_domain.cdn_frontdoor_custom_domains : k => one(v.tls) if v.tls != null && length(v.tls) > 0 }
 }
 output "cdn_frontdoor_custom_domains_validation_token" {
   description = "Map of validation_token values across all cdn_frontdoor_custom_domains, keyed the same as var.cdn_frontdoor_custom_domains"
